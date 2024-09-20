@@ -14,11 +14,11 @@
 }
 
 .body{
-    background-color: rgb(90, 92, 92);
+    background-color: #e1eacd;
 }
 
 .footer{
-    background-color: #023E8A;
+    background-color: #61b390;
 }
 
 .icon-white{            /* Arrow icon at bottom of page */
@@ -26,17 +26,18 @@
 }
 
 .nb-background-color{   /* navbar background color */
-    background-color: #023E8A;
+    background-color: #01352c;
 }
 
 .nbMenuItem{               /* navbar link text properties */
     font-size:25px;
     margin-left: 10px;
     margin-right: 10px;
+    color: white;
 }
 
 .overview{
-    background-color: #dbe3e7;
+    background-color: #e1eacd;
 }
 
 .ovPadLeft{
@@ -53,7 +54,7 @@
 }
 
 .showcase{
-    background-color: #8fa3ab; /*#0096c7*/
+    background-color: #bad8b6; /*#0096c7*/
 }
 
 /* ----------------- ID CSS ----------------- */
@@ -81,4 +82,10 @@
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
+}
+
+.heading-text {
+    color: black;
+    font-size: 50px;
+    font-type: 'Times New Roman';
 }
