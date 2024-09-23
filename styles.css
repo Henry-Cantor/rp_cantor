@@ -18,11 +18,12 @@
 }
 
 .footer{
-    background-color: #61b390;
+    background-color: #bad8b6;
+
 }
 
-.icon-white{            /* Arrow icon at bottom of page */
-    color: #FFFFFF;
+.icon-black{            /* Arrow icon at bottom of page */
+    color: #000;
 }
 
 .nb-background-color{   /* navbar background color */
@@ -38,6 +39,7 @@
 
 .overview{
     background-color: #e1eacd;
+    font-family: 'Times New Roman';
 }
 
 .ovPadLeft{
@@ -86,6 +88,11 @@
 
 .heading-text {
     color: black;
-    font-size: 50px;
-    font-type: 'Times New Roman';
+    font-size: 52px;
+    font-family: 'Trebuchet MS';
+}
+
+.foot-text {
+    color: black;
+    font-family: 'Trebuchet MS';
 }
