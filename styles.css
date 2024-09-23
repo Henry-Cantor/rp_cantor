@@ -1,4 +1,10 @@
 /* ----------------- Class CSS ----------------- */
+.navigation-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 
 .about{
     width:400px;
@@ -57,6 +63,7 @@
 
 .showcase{
     background-color: #bad8b6; /*#0096c7*/
+    margin-top: 75px;
 }
 
 /* ----------------- ID CSS ----------------- */
