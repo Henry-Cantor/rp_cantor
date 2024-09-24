@@ -178,3 +178,9 @@ hr {
     position: relative;
         left: 35%;
 }
+
+@media screen and (max-width: 800px) {
+    .author-card {
+        width: 100%;
+    }
+}
