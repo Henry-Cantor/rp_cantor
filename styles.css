@@ -3,6 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 10;
 }
 
 
@@ -123,4 +124,25 @@ h3 {
 
 hr {
     border-width: 8px;
+}
+
+.author-container {
+    padding-top: 65px;
+    padding-bottom: 20px;
+    background-color: #e1eacd;
+}
+
+.author-card {
+    width: 800px;
+    background-color: #01352c;
+    color: white;
+    font-family: 'Trebuchet MS';
+    border-color: black;
+    border-width: 4px;
+    border-radius: 5px;
+}
+
+.procedure-page {
+    background-color: #e1eacd;
+    margin-top: 60px;
 }
