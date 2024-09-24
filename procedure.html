@@ -54,76 +54,125 @@
         <div class="container">
             <br>
             <div class="text-center">
-                <h1>Procedure</h1>
+                <h1>Experimental Procedure</h1>
             </div>
 
             <hr><br>
-
-            <table class="table table-hover text-center table-light table-bordered border-dark-subtle">
-                <thead>
-                    <tr class="table-primary">
-                        <th><h3>Step</h3></th>
-                        <th><h3>Description</h3></th>
-                        <th><h3>Image</h3></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr class="align-middle">
-                        <!-- scope = row specifies header cell is the header for that row -->
-                        <th scope="row" class="table-secondary">
-                            <h3>1</h3>
-                        </th>
-                        <td>
-                            <h3 class="howTo">Start Python Flask server</h3>
-                        </td>
-                        <td class="text-center"><img src="img/python-logo.png" alt="Python Logo"></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <!-- scope = row specifies header cell is the header for that row -->
-                        <th scope="row" class="table-secondary">
-                            <h3>2</h3>
-                        </th>
-                        <td>
-                            <h3 class="howTo">Power circuit on. SR-04/05 transmits data to Nano IOT</h3>
-                        </td>
-                        <td class="text-center"><img src="img/range-finder-tp.png" alt="Range Finder"></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <!-- scope = row specifies header cell is the header for that row -->
-                        <th scope="row" class="table-secondary">
-                            <h3>3</h3>
-                        </th>
-                        <td>
-                            <h3 class="howTo">Nano IoT connects to PC via WiFi and sends data to Arduino program</h3>
-                        </td>
-                        <td class="text-center"><img src="img/nano33-iot3.png" alt="Nano 33 IoT"></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <!-- scope = row specifies header cell is the header for that row -->
-                        <th scope="row" class="table-secondary">
-                            <h3>4</h3>
-                        </th>
-                        <td>
-                            <h3 class="howTo">Arduino and Flask server communicate via HTTP request protocol</h3>
-                        </td>
-                        <td class="text-center"><img src="img/arduino-logo.png" alt="Arduino Logo"></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <!-- scope = row specifies header cell is the header for that row -->
-                        <th scope="row" class="table-secondary">
-                            <h3>5</h3>
-                        </th>
-                        <td>
-                            <h3 class="howTo">Flask connects to Firebase and sends data for storage</h3>
-                        </td>
-                        <td class="text-center"><img src="img/firebase-logo.png" alt="Firebase Logo"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container">
+              <img src="research-img/microscope.png" alt="Microscope Graphic" class="top-graphic">
+            </div>
+            <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Step 1
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-sm-10">
+                            <h3 class="howTo">Create algae culture with stock and algae-grow solution, made from water and nutrient concentrate</h3>
+                        </div>
+                        <div class="col-sm-2">
+                            <img src="research-img/stock-culture.png" alt="Stock Culture" class="r-img">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Step 2
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-sm-10">
+                          <h3 class="howTo">Let the cultures grow for a few days and build the amount of cells before beginning experimentation</h3>
+                        </div>
+                        <div class="col-sm-2">
+                          <img src="research-img/test-tube-group.jpeg" alt="Growth" class="r-img">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Step 3
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-sm-10">
+                          <h3 class="howTo">Measure initial cell density with hemocytometer, following the diagram below if need be</h3>
+                        </div>
+                        <div class="col-sm-2">
+                          <img src="research-img/under-microscope.jpeg" alt="Under Microscope" class="r-img">
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Step 4
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3 class="howTo">Incubate in centrifuge for 3 hours at 0, 1000, 2000, or 3000 x g (12 trials per condition), then wait 2 weeks</h3>
+                          </div>
+                          <div class="col-sm-2">
+                            <img src="research-img/centrifuge.jpeg" alt="Centrifuge" class="r-img">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Step 5
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3 class="howTo">Take final cell density with hemocytometer, using the same method as described previously</h3>
+                          </div>
+                          <div class="col-sm-2">
+                            <td class="text-center"><img src="research-img/table-setup.jpeg" alt="Table Setup" class="r-img">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Step 6
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3 class="howTo">Analyze results by calculating cell density and performing statistical tests</h3>
+                          </div>
+                          <div class="col-sm-2">
+                            <img src="research-img/stat-curve.png" alt="Statistical Curve" class="r-img">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
         </div>
     </section>
 

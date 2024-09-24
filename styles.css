@@ -144,5 +144,37 @@ hr {
 
 .procedure-page {
     background-color: #e1eacd;
-    margin-top: 60px;
+    margin-top: 80px;
+    margin-bottom: 45px;
+}
+
+.r-img {
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.howTo {
+    font-size: 30px;
+}
+
+.accordion-body {
+    background-color: #bad8b6;
+    border: 25px solid #e1eacd;
+}
+
+.accordion-button {
+    background-color: #61b390 !important;
+    font-size: 35px;
+    color: black !important;
+    border: 15px solid #e1eacd;
+}
+
+.top-graphic {
+    max-height: 400px;
+    z-index: 5;
+    justify-content: center;
+    position: relative;
+        left: 35%;
 }
