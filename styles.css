@@ -1,30 +1,16 @@
 /* ----------------- Class CSS ----------------- */
-.navigation-bar {
+.navigation-bar {                        /* navigation bar  */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
 }
 
-
-.about{
-    width:400px;
-    margin: auto;
-}
-
-.about-team{
-    color:rgb(82, 81, 81)
-}
-
-.authors{
-    background-color: #dbe3e7;
-}
-
-.body{
+.body{                        /* the body of all pages  */
     background-color: #e1eacd;
 }
 
-.footer{
+.footer{                        /* for the footer at the bottom of each page  */
     background-color: #bad8b6;
 
 }
@@ -44,28 +30,143 @@
     color: white;
 }
 
-.overview{
+.overview{               /* text on index.html page */
     background-color: #e1eacd;
     font-family: 'Times New Roman';
 }
 
-.ovPadLeft{
+.ovPadLeft{               /* overview padding */
     padding-left: 20px;
 }
 
-.ovPadRight{  
+.ovPadRight{                /* overview padding */
     padding-right: 20px;
 }
 
-.procedure{
+.procedure{               /* for procedure page */
     background-color: #dbe3e7;
     padding: 1px;
 }
 
-.showcase{
+.showcase{               /* header/image on index.html  */
     background-color: #bad8b6; /*#0096c7*/
     margin-top: 75px;
 }
+
+.heading-text {/* showcase text details  */
+    color: black;
+    font-size: 52px;
+    font-family: 'Trebuchet MS';
+}
+
+.foot-text {                /* text for footer */
+    color: black;
+    font-family: 'Trebuchet MS';
+}
+
+h3 {                        /* all h3 elements  */
+    color: black;
+    font-family: 'Trebuchet MS';
+}
+
+.research-container {                        /* links to research paper and poster  */
+    background-color: #01352c;
+    border-color: white;
+    color: white;
+    border-radius: 20px; 
+    height: 10%;
+    width: 40%;
+    font-size: 30px;
+    font-family: 'Trebuchet MS';
+    margin-top: 30px;
+}
+
+hr {                           /* all horizontal line break elements  */
+    border-width: 8px;
+}
+
+.author-container {                        /* author page details  */
+    padding-top: 65px;
+    padding-bottom: 20px;
+    background-color: #e1eacd;
+}
+
+.author-card {                        /* for specific author card  */
+    width: 800px;
+    background-color: #01352c;
+    color: white;
+    font-family: 'Trebuchet MS';
+    border-color: black;
+    border-width: 4px;
+    border-radius: 5px;
+}
+
+.procedure-page {                        /* all of the procedure.html page  */
+    background-color: #e1eacd;
+    margin-top: 80px;
+    margin-bottom: 45px;
+}
+
+.r-img {                        /* images in accordion of procedure  */
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 5px;
+}
+
+.text-container {                        /* accordion text container  */
+    display: inline-block;
+}
+
+.r-img-container {                        /* accordion image container  */
+    display: inline-block;
+}
+
+.howTo {                        /* procedure text  */
+    font-size: 30px;
+}
+
+.accordion-body {                        /* for accordion overall  */
+    background-color: #bad8b6;
+    border: 25px solid #e1eacd;
+}
+
+.accordion-button {                        /* for each button of the accordion  */
+    background-color: #61b390 !important;
+    font-size: 35px;
+    color: black !important;
+    border: 15px solid #e1eacd;
+}
+
+.top-graphic {                        /* microscope above accordion  */
+    max-width: 300px;
+    z-index: 5;
+    justify-content: center;
+    position: relative;
+        left: calc(50% - 150px);
+}
+
+@media screen and (max-width: 900px) {              /* if screen is 900px or below, adjust author card and accordion info sizes  */
+    .author-card {
+        width: 100%;
+    }
+
+    .r-img-container {
+        width: 50%;
+    }
+    .text-container {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {              /* if screen is 100px or below, adjust accordion info sizes  */
+    .r-img-container {
+        width: 30%;
+    }
+    .text-container {
+        width: 70%;
+    }
+}
+
 
 /* ----------------- ID CSS ----------------- */
 
@@ -94,93 +195,3 @@
     /*transform-origin: bottom left;*/
 }
 
-.heading-text {
-    color: black;
-    font-size: 52px;
-    font-family: 'Trebuchet MS';
-}
-
-.foot-text {
-    color: black;
-    font-family: 'Trebuchet MS';
-}
-
-h3 {
-    color: black;
-    font-family: 'Trebuchet MS';
-}
-
-.research-container {
-    background-color: #01352c;
-    border-color: white;
-    color: white;
-    border-radius: 20px; 
-    height: 10%;
-    width: 40%;
-    font-size: 30px;
-    font-family: 'Trebuchet MS';
-    margin-top: 30px;
-}
-
-hr {
-    border-width: 8px;
-}
-
-.author-container {
-    padding-top: 65px;
-    padding-bottom: 20px;
-    background-color: #e1eacd;
-}
-
-.author-card {
-    width: 800px;
-    background-color: #01352c;
-    color: white;
-    font-family: 'Trebuchet MS';
-    border-color: black;
-    border-width: 4px;
-    border-radius: 5px;
-}
-
-.procedure-page {
-    background-color: #e1eacd;
-    margin-top: 80px;
-    margin-bottom: 45px;
-}
-
-.r-img {
-    min-width: 100px;
-    max-width: 200px;
-    min-height: 100px;
-    max-height: 200px;
-}
-
-.howTo {
-    font-size: 30px;
-}
-
-.accordion-body {
-    background-color: #bad8b6;
-    border: 25px solid #e1eacd;
-}
-
-.accordion-button {
-    background-color: #61b390 !important;
-    font-size: 35px;
-    color: black !important;
-    border: 15px solid #e1eacd;
-}
-
-.top-graphic {
-    max-height: 400px;
-    z-index: 5;
-    justify-content: center;
-    position: relative;
-        left: 35%;
-}
-
-@media screen and (max-width: 800px) {
-    .author-card {
-        width: 100%;
-    }
-}
