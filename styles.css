@@ -113,14 +113,6 @@ hr {                           /* all horizontal line break elements  */
     padding-right: 5px;
 }
 
-.text-container {                        /* accordion text container  */
-    display: inline-block;
-}
-
-.r-img-container {                        /* accordion image container  */
-    display: inline-block;
-}
-
 .howTo {                        /* procedure text  */
     font-size: 30px;
 }
@@ -145,7 +137,7 @@ hr {                           /* all horizontal line break elements  */
         left: calc(50% - 150px);
 }
 
-@media screen and (max-width: 900px) {              /* if screen is 900px or below, adjust author card and accordion info sizes  */
+@media screen and (max-width: 900px) {              /* if screen is 900px or below, adjust author card and accordion img sizes  */
     .author-card {
         width: 100%;
     }
@@ -153,17 +145,36 @@ hr {                           /* all horizontal line break elements  */
     .r-img-container {
         width: 50%;
     }
+}
+
+@media screen and (max-width: 950px) {              /* if screen is 100px or below, adjust accordion img sizes  */
+
     .text-container {
-        width: 50%;
+        width: 70%;
+    }
+
+    .r-img-container {
+        width: 300%;
+    }
+
+    .r-img {
+        min-width: 150px;
     }
 }
 
-@media screen and (max-width: 1000px) {              /* if screen is 100px or below, adjust accordion info sizes  */
-    .r-img-container {
-        width: 30%;
-    }
+@media screen and (max-width: 1200px) {              /* if screen is 100px or below, adjust accordion img sizes  */
+
     .text-container {
-        width: 70%;
+        width: 80%;
+    }
+
+    .r-img-container {
+        width: 100%;
+    }
+
+    .r-img {
+        min-width: 50px;
+        max-width: 200px;
     }
 }
 
