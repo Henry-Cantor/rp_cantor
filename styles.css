@@ -206,3 +206,14 @@ hr {                           /* all horizontal line break elements  */
     /*transform-origin: bottom left;*/
 }
 
+.results-title-text {
+    text-align: center;
+    font-size: 60px;
+    font-style: 'Trebuchet MS';
+    margin-top: 6%;
+}
+
+.chart1 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
