@@ -1,5 +1,4 @@
-/* Fetch CSV temperature data and display via Chart.js 
-Temperature values are differences from the mean of 14 deg-C.*/
+/* Fetch CSV temperature data and display via Chart.js */
 
 async function getData(url) {
     const response = await fetch(url); //.. moves up 1 folder level
