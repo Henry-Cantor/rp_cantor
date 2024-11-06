@@ -9,7 +9,7 @@ async function getData(url) {
 }
 
 async function organizeData1() {
-    const data = await getData('data/Data1 - Sheet1-2.csv');    // load data and await getData() function
+    const data = await getData('../data/Data1 - Sheet1-2.csv');    // load data and await getData() function
     const xConditions = [];                                   // x-axis labels
     const yFirstCount = [];                                   // y-axis cell counts for first count
     const yPostCount = [];                                    // y-axis cell counts for post count
@@ -46,7 +46,7 @@ async function organizeData1() {
 }
 
 async function organizeData2() {
-    const data = await getData('data/Data2 - Sheet1.csv');    // load data and await getData() function
+    const data = await getData('../data/Data2 - Sheet1.csv');    // load data and await getData() function
     const xConditions = [];                                   // x-axis labels
     const yNumDiv = [];                                       // y-axis mean number of divisions
     const stDiv = [];                                         // standard deviations for each condition's number of divisions
