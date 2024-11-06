@@ -9,7 +9,7 @@ async function getData(url) {
 }
 
 async function organizeData1() {
-    const data = await getData('data/Data1-Sheet1-2.csv');    // load data and await getData() function
+    const data = await getData('data/Data1 - Sheet1-2.csv');    // load data and await getData() function
     const xConditions = [];                                   // x-axis labels
     const yFirstCount = [];                                   // y-axis cell counts for first count
     const yPostCount = [];                                    // y-axis cell counts for post count
@@ -19,7 +19,7 @@ async function organizeData1() {
     // \n - new line chracter
     // split('\n') - separate the table into an array of indiv. rows.
     // slice(start, end) - return a new array starting at index 'start' up to but not including 'end'
-    const table = data.split('\n').slice(1);
+    const table = data.split('\n').slice(0);
     // console.log(table);
 
     table.forEach(row => {
@@ -41,6 +41,7 @@ async function organizeData1() {
         stPost.push(stDevPost);  
         
     });
+    console.log('Returning the values as objects: ', xConditions, yFirstCount, yPostCount, stFirst, stPost)
     return {xConditions, yFirstCount, yPostCount, stFirst, stPost}     // return multiple values as an object
 }
 
@@ -53,7 +54,7 @@ async function organizeData2() {
     // \n - new line chracter
     // split('\n') - separate the table into an array of indiv. rows.
     // slice(start, end) - return a new array starting at index 'start' up to but not including 'end'
-    const table = data.split('\n').slice(1);
+    const table = data.split('\n').slice(0);
     // console.log(table);
 
     table.forEach(row => {
@@ -72,89 +73,64 @@ async function organizeData2() {
     return {xConditions, yNumDiv, stDiv}     // return multiple values as an object
 }
 
-async function createChart() {
-    const data = await getData();       // wait for getData() to send formated data to createChart()
-    const lineChart = document.getElementById('lineChart');
-    const degreeSymbol = String.fromCharCode(176);
+async function createChart1() {
+    const data = await organizeData1();       // wait for organizeData() to send formatted data to createChart()
+    const barChart = document.getElementById('barChart1');
 
-    const myChart = new Chart(lineChart, {
-        type: 'line',
+    const myChart = new Chart(barChart, {       // Build the first chart
+        type: 'bar',
         data: {
-            labels: data.xYears,        // x-axis labels
-            datasets: [
+            labels: data.xConditions,        // x-axis labels
+            datasets: [                      // y-axis data of initial and post cell densities
                 {
-                    label: `Combined Global Land-Surface Air and Sea-Surface Water Temperatures in ${degreeSymbol}C`,
-                    data: data.yTemps,
-                    fill: false,
+                    label: 'Initial Cell Density',
+                    data: data.yFirstCount,
                     backgroundColor: 'rgba(255, 0, 132, 0.2)',
                     borderColor: 'rgba(255, 0, 132, 1)',
                     borderWidth: 1
                 },
                 {
-                    label: `Combined N.H. Land-Surface Air and Sea-Surface Water Temperatures in ${degreeSymbol}C`,
-                    data: data.yNHtemps,
-                    fill: false,
+                    label: 'After-Incubation Cell Density',
+                    data: data.yPostCount,
                     backgroundColor: 'rgba(0, 102, 255, 0.2)',
                     borderColor: 'rgba(0, 102, 255, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: `Combined S.H. Land-Surface Air and Sea-Surface Water Temperatures in ${degreeSymbol}C`,
-                    data: data.ySHtemps,
-                    fill: false,
-                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
-                    borderColor: 'rgba(0, 153, 51, 1)',
                     borderWidth: 1
                 }
             ]
         },
         options: {
             responsive: true,               // re-size based on screen size
-            maintainAspectRatio: false,     
+            maintainAspectRatio: true,     
             scales: {                       // display options for x & y axes
                 x: {
                     title: {
                         display: true,
-                        text: 'Year',       // x-axis title
+                        text: 'Condition',       // x-axis title
                         font: {             // font properties
                             size: 14
                         }
-                    },
-                    ticks: {
-                        callback: function(val, index) {
-                            return index % 5 === 0 ? this.getLabelForValue(val) : '';
-                        },
-                        font: {
-                            size: 14
-                        }
-                    },
-                    grid: {
-                        color:'#6c767e'
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Mean Temperatures',      // y-axis title
+                        text: 'Cell Density (cells/mL)',      // y-axis title
                         font: {                         // font properties
                             size: 14
                         }
                     },
                     ticks: {
-                        maxTicksLimit: data.yTemps.length/10,
+                        maxTicksLimit: data.yPostCount.length*2,
                         font: {
                             size: 12
                         }
-                    },
-                    grid: {
-                        color:'#6c767e'
                     }
                 }
             },
             plugins: {      // Display options for title and legend
                 title: {
                     display: true,      // display chart title
-                    text: 'Global Mean Temperatures vs Year (since 1880)',
+                    text: 'Cell Density Measurements for Each Condition',
                     font: {
                         size: 24,
                     },
@@ -173,4 +149,76 @@ async function createChart() {
     });
 }
 
-createChart();
+async function createChart2() {
+    const data = await organizeData2();       // wait for getData() to send formated data to createChart()
+    const barChart = document.getElementById('barChart2');
+
+    const myChart = new Chart(barChart, {
+        type: 'bar',
+        data: {
+            labels: data.xConditions,        // x-axis labels
+            datasets: [                     // y-axis data of number of divisions per cell
+                {
+                    label: 'Number of Divisions',
+                    data: data.yNumDiv,
+                    backgroundColor: 'rgba(0, 181, 131, 0.2)',
+                    borderColor: 'rgba(0, 181, 131)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,               // re-size based on screen size
+            maintainAspectRatio: true,     
+            scales: {                       // display options for x & y axes
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Condition',       // x-axis title
+                        font: {             // font properties
+                            size: 14
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Average Divisions per Cell',      // y-axis title
+                        font: {                         // font properties
+                            size: 14
+                        }
+                    },
+                    ticks: {
+                        maxTicksLimit: data.yNumDiv.length*2,
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            plugins: {      // Display options for title and legend
+                title: {
+                    display: true,      // display chart title
+                    text: 'Divisions per Cell for Each Condition',
+                    font: {
+                        size: 24,
+                    },
+                    color: '#black',
+                    padding: {
+                        top: 10,
+                        bottom: 30
+                    }
+                },
+                legend: {
+                    align: 'start',
+                    position: 'bottom',
+                }
+            }
+        }
+    });
+}
+
+
+// call functions to build charts
+createChart1();
+createChart2();
