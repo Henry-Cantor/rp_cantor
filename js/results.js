@@ -1,9 +1,3 @@
-import Chart from 'chart.js/auto';
-import { ChartJS } from 'chart.js';
-import { ErrorBarController, ErrorBarElement } from 'chartjs-chart-error-bars';
-
-ChartJS.register(ErrorBarController, ErrorBarElement); 
-
 /* Fetch CSV temperature data and display via Chart.js */
 
 async function getData(url) {
@@ -46,7 +40,7 @@ async function organizeData1() {
         stPost.push(stDevPost);  
         
     });
-    console.log('Returning the values as objects: ', xConditions, yFirstCount, yPostCount, stFirst, stPost)
+    // console.log('Returning the values as objects: ', xConditions, yFirstCount, yPostCount, stFirst, stPost)
     return {xConditions, yFirstCount, yPostCount, stFirst, stPost}     // return multiple values as an object
 }
 
@@ -92,26 +86,14 @@ async function createChart1() {
                     data: data.yFirstCount,
                     backgroundColor: 'rgba(255, 0, 132, 0.2)',
                     borderColor: 'rgba(255, 0, 132, 1)',
-                    borderWidth: 1,
-                    errorBars: {
-                        y: {
-                            plus: data.stFirst,
-                            minus: data.stFirst
-                        }
-                    }
+                    borderWidth: 1
                 },
                 {
                     label: 'After-Incubation Cell Density',
                     data: data.yPostCount,
                     backgroundColor: 'rgba(0, 102, 255, 0.2)',
                     borderColor: 'rgba(0, 102, 255, 1)',
-                    borderWidth: 1,
-                    errorBars: {
-                        y: {
-                            plus: data.stPost,
-                            minus: data.stPost
-                        }
-                    }
+                    borderWidth: 1
                 }
             ]
         },
