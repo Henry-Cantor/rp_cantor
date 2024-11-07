@@ -12,8 +12,6 @@ async function organizeData1() {
     const xConditions = [];                                   // x-axis labels
     const yFirstCount = [];                                   // y-axis cell counts for first count
     const yPostCount = [];                                    // y-axis cell counts for post count
-    const stFirst = [];                                       // standard deviations for first count
-    const stPost = [];                                        // standard deviations for post count
 
     // \n - new line chracter
     // split('\n') - separate the table into an array of indiv. rows.
@@ -31,24 +29,16 @@ async function organizeData1() {
         yFirstCount.push(firstCellCount);                  
         
         const postCellCount = parseFloat(columns[2]);          // second cell density value
-        yPostCount.push(postCellCount);           
-
-        const stDevFirst = parseFloat(columns[3]);          // first cell count standard deviation value
-        stFirst.push(stDevFirst);     
-
-        const stDevPost = parseFloat(columns[4]);          // second cell count standard deviation value
-        stPost.push(stDevPost);  
-        
+        yPostCount.push(postCellCount);               
     });
     // console.log('Returning the values as objects: ', xConditions, yFirstCount, yPostCount, stFirst, stPost)
-    return {xConditions, yFirstCount, yPostCount, stFirst, stPost}     // return multiple values as an object
+    return {xConditions, yFirstCount, yPostCount}     // return multiple values as an object
 }
 
 async function organizeData2() {
     const data = await getData('data/Data2 - Sheet1.csv');    // load data and await getData() function
     const xConditions = [];                                   // x-axis labels
     const yNumDiv = [];                                       // y-axis mean number of divisions
-    const stDiv = [];                                         // standard deviations for each condition's number of divisions
 
     // \n - new line chracter
     // split('\n') - separate the table into an array of indiv. rows.
@@ -63,13 +53,9 @@ async function organizeData2() {
         xConditions.push(condition);                      // push condition values into xConditions array
 
         const numberDivisions = parseFloat(columns[1]);     // mean number of divisions for each condition
-        yNumDiv.push(numberDivisions);                  
-        
-        const stDevDiv = parseFloat(columns[2]);          // standard deviation for the number of divisions
-        stDiv.push(stDevDiv);  
-        
+        yNumDiv.push(numberDivisions);                      
     });
-    return {xConditions, yNumDiv, stDiv}     // return multiple values as an object
+    return {xConditions, yNumDiv}     // return multiple values as an object
 }
 
 async function createChart1() {
